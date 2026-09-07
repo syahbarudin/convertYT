@@ -75,7 +75,8 @@ if url:
   if st.button("⚡ Ekstrak & Konversi Audio", type="primary", use_container_width=True):
     with st.spinner("Mengambil metadata video..."):
       try:
-        ydl_opts_info = {"quiet": True, "no_warnings": True}
+        ydl_opts_info = {"quiet": True, "no_warnings": True, "extractor_args": {
+        "youtube": {"player_client": ["ios", "mweb"]}},}
         with yt_dlp.YoutubeDL(ydl_opts_info) as ydl:
           info = ydl.extract_info(url, download=False)
           title = info.get("title", "Audio")
@@ -106,6 +107,10 @@ if url:
               "outtmpl": output_template,
               "quiet": True,
               "no_warnings": True,
+              "extractor_args": {
+                "youtube": {"player_client": ["ios", "mweb"]
+        }
+    },
           }
 
           if target_codec != "m4a" and ffmpeg_path:
