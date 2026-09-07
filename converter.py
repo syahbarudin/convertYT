@@ -103,7 +103,7 @@ if url:
           output_template = os.path.join(temp_dir, "%(title)s.%(ext)s")
 
           ydl_opts = {
-              "format": "bestaudio/best",
+              "format": "ba/ba*/b/best",
               "outtmpl": output_template,
               "quiet": True,
               "no_warnings": True,
