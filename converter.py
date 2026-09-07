@@ -76,7 +76,7 @@ if url:
     with st.spinner("Mengambil metadata video..."):
       try:
         ydl_opts_info = {"quiet": True, "no_warnings": True, "extractor_args": {
-        "youtube": {"player_client": ["ios", "mweb"]}},}
+        "youtube": {"player_client": ["android"]}},}
         with yt_dlp.YoutubeDL(ydl_opts_info) as ydl:
           info = ydl.extract_info(url, download=False)
           title = info.get("title", "Audio")
@@ -108,7 +108,7 @@ if url:
               "quiet": True,
               "no_warnings": True,
               "extractor_args": {
-                "youtube": {"player_client": ["ios", "mweb"]
+                "youtube": {"player_client": ["android"]
         }
     },
           }
