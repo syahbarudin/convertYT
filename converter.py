@@ -16,7 +16,7 @@ if not ffmpeg_path:
 
 st.set_page_config(
     page_title="YT Studio Audio Converter",
-    page_icon="🎧",
+    page_icon="mp4.png",
     layout="centered",
 )
 
